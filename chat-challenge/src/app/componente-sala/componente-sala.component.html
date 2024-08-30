@@ -1,0 +1,21 @@
+<div class="card container mt-5">
+  <div class="card-header">
+    Sala de chat
+  </div>
+  <div *ngFor="let mensaje of mensajes">
+    <div class="card">
+      <div class="card-body">
+        <p><strong>{{ mensaje.nombre }}:</strong> {{ mensaje.mensaje }}</p>
+        <p><small>{{ mensaje.fecha | date:'short' }}</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Conversacion</h5>
+    <div class="row">
+      <div class="col-6"><app-componente-usuario [nombre]="nombreP" (mensajeAEnviar)="recibirMensaje($event)"></app-componente-usuario></div>
+      <div class="col-6"><app-componente-usuario [nombre]="nombreM" (mensajeAEnviar)="recibirMensaje($event)"></app-componente-usuario></div>
+    </div>
+  </div>
+
+</div>
